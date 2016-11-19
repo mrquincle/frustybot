@@ -1,12 +1,17 @@
 let hitSentences = {
   available: {mild:[], angry:[]},
   mild: [
+    "Dat kietelt!",
+    "Hi Hi Hi!",
     "Niet om het 1 of ander",
     "Ik ben je moeder niet",
-    "Hee, Ouwe!",
+    "Dat is fijn!",
   ],
   angry: [
-    "auw!"
+    "auw!",
+    "Rustig aan!",
+    "Wat heb ik gedaan?",
+    "Waarom ik?"
   ]
 };
 
