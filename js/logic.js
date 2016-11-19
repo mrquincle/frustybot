@@ -30,7 +30,7 @@ function pronounce(sentenceOptions) {
   console.log(sentenceOptions, selectedSentence);
 
   // say it
-  responsiveVoice.setDefaultVoice("Dutch Female", {pitch:4} );
+  responsiveVoice.setDefaultVoice("Dutch Female", {pitch:4, volume:1} );
   responsiveVoice.speak(selectedSentence);
 }
 
@@ -40,18 +40,20 @@ function saySomething(intensity) {
   AMOUNT_OF_SHAKES += 1;
 
   if (AMOUNT_OF_SHAKES >= AMOUNT_OF_LINES_BEFORE_HELPDESK) {
-    // temporarily ignore shakes while calling
     IGNORE_SHAKES = true;
-
-    // click the link
-    let element = document.getElementById("call-helpdesk");
-    element.click();
-
-    // speak the line
     pronounce(helpdeskSentences[intensity]);
-
-
     AMOUNT_OF_SHAKES = 0;
+
+    // click the hidden skype button and wait for the speach to end
+    setTimeout(() => {
+      let element = document.getElementById("call-helpdesk");
+      console.log("CLICKING ELEMENT", element);
+      element.click();
+    },4000);
+
+
+
+    // ignore shakes for 4 seconds if we are calling the helpdesk.
     setTimeout(() => { IGNORE_SHAKES = false; }, 10000);
   }
   else {
