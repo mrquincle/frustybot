@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
 	<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+	<script src='http://www.skypeassets.com/i/scom/js/skype-uri.js'</script>
 	<script src="shake.js"></script>
 	<script>
 		function saySomething(sentence) {
@@ -32,8 +33,8 @@
 				console.log("Reset to first sentence");
 				sentence_i = 0;
 				console.log("Call helpdesk");
-//				document.getElementById('call-helpdesk').click();
-				window.location.href = "skype:marc.hulscher?call";
+				window.open("skype:marc.hulscher?call","_self");
+				document.getElementById('call-helpdesk').click();
 			}
 		}
 
@@ -65,8 +66,19 @@
 	</div>
 	<div>
 		<img src="images/robot-turtles.jpg"/>
-		<input id="call-helpdesk" onclick='skype:marc.hulscher?call' type='button' value='Call!' />
 		<a id="call-helpdesk2" href="skype:marc.hulscher?call">Call helpdesk</a>
+	</div>
+
+	<div id="call_32" style="width:20%;background-color:#0094ff">
+	   <script type="text/javascript">
+			Skype.ui({
+				name: "call",
+				element: "call_32",
+				participants: ["marc.hulscher"],
+				imageSize: 32,
+				imageColor: "white"
+			});
+		</script>
 	</div>
 
 	<div>
