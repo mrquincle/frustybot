@@ -5,7 +5,7 @@ let hitSentences = {
     "Hee, Ouwe!",
   ],
   angry: [
-    "aaaaaaaahhh"
+    "auw!"
   ]
 };
 

@@ -111,7 +111,9 @@
             currentTime = new Date();
             timeDifference = currentTime.getTime() - this.lastTime.getTime();
 
-            this.event.vector = Math.sqrt(deltaX*deltaX + deltaY*deltaY * deltaZ*deltaZ);
+            this.event.dx = deltaX;
+            this.event.dy = deltaY;
+            this.event.dz = deltaZ;
             if (timeDifference > this.options.timeout) {
                 window.dispatchEvent(this.event);
                 this.lastTime = new Date();
