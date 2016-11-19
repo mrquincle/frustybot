@@ -9,7 +9,7 @@ function select(userType) {
   webrtc = new SimpleWebRTC({
     localVideoEl: '',
     remoteVideosEl: '',
-    autoRequestMedia: false,
+    autoRequestMedia: true,
     enableDataChannels: false,
     media: {
       audio: true,
