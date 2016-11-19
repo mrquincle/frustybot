@@ -19,8 +19,8 @@
 		var sentences = [
 			"Niet om het 1 of ander", 
 			"Ik ben je moeder niet", 
-			"Laten we dit eens eventjes gaan afkaderen", 
-			"Ouwe lul"
+			"Hee, Ouwe!",
+			"We gaan even de helpdesk voor je bellen"
 		];
 
 		var sentence_i = 0;
@@ -28,7 +28,7 @@
 		function sayNextThing() {
 			saySomething(sentences[sentence_i]);
 			sentence_i += 1;
-			if (sentence_i == sentences.length) {
+			if (sentence_i == sentences.length + 1) {
 				sentence_i = 0;
 			}
 		}
@@ -61,6 +61,7 @@
 	</div>
 	<div>
 		<img src="images/robot-turtles.jpg"/>
+		<a href="callto:marc.hulscher">Call helpdesk</a>
 	</div>
 
 	<div>
