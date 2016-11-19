@@ -79,7 +79,7 @@ function saySomething(emotion) {
     setTimeout(() => {
       let element = document.getElementById("call-helpdesk");
       console.log("CLICKING ELEMENT", element);
-      element.click();
+      //element.click();
     },3500);
 
 
