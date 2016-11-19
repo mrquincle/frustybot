@@ -2,6 +2,9 @@
  * Author: Alex Gibson
  * https://github.com/alexgibson/shake.js
  * License: MIT license
+ *
+ *
+ * MODIFIED FOR USE WITH FRUSTYBOT
  */
 
 (function(global, factory) {
@@ -101,11 +104,14 @@
         deltaY = Math.abs(this.lastY - current.y);
         deltaZ = Math.abs(this.lastZ - current.z);
 
-        if (((deltaX > this.options.threshold) && (deltaY > this.options.threshold)) || ((deltaX > this.options.threshold) && (deltaZ > this.options.threshold)) || ((deltaY > this.options.threshold) && (deltaZ > this.options.threshold))) {
+        if (((deltaX > this.options.threshold) && (deltaY > this.options.threshold)) ||
+            ((deltaX > this.options.threshold) && (deltaZ > this.options.threshold)) ||
+            ((deltaY > this.options.threshold) && (deltaZ > this.options.threshold))) {
             //calculate time in milliseconds since last shake registered
             currentTime = new Date();
             timeDifference = currentTime.getTime() - this.lastTime.getTime();
 
+            this.event.vector = Math.sqrt(deltaX*deltaX + deltaY*deltaY * deltaZ*deltaZ);
             if (timeDifference > this.options.timeout) {
                 window.dispatchEvent(this.event);
                 this.lastTime = new Date();
