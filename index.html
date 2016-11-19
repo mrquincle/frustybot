@@ -30,6 +30,7 @@
 			sentence_i += 1;
 			if (sentence_i == sentences.length + 1) {
 				sentence_i = 0;
+				document.getElementById('call-helpdesk').click();
 			}
 		}
 
@@ -61,7 +62,7 @@
 	</div>
 	<div>
 		<img src="images/robot-turtles.jpg"/>
-		<a href="skype:marc.hulscher?call">Call helpdesk</a>
+		<a id="call-helpdesk" href="skype:marc.hulscher?call">Call helpdesk</a>
 	</div>
 
 	<div>
