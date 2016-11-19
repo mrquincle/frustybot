@@ -18,13 +18,13 @@ function select(userType) {
 
   document.getElementById("startInterface").style.display = "none";
   if (userType === 'elderly') {
-    USER_PEER = new Peer({key: 'yqh0u7lrdrhpvi'});
+    USER_PEER = new Peer({key: 'yqh0u7lrdrhpvi', secure: true});
     document.getElementById("elderlyInterface").style.display = "block";
 
     call();
   }
   else {
-    USER_PEER = new Peer({key: '2eoyrb803qq9qkt9'});
+    USER_PEER = new Peer({key: '2eoyrb803qq9qkt9', secure: true});
     document.getElementById("helpdeskInterface").style.display = "block";
 
     USER_PEER.on('call', function(callSession) {
