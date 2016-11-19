@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+	<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+	<script src="shake.js"></script>
+	<script>
+		function saySomething(sentence) {
+			responsiveVoice.setDefaultVoice("Dutch Female", {pitch:4} );
+			responsiveVoice.speak(sentence);
+		}
+
+/*
+		var sentences = [
+			"Goedemorgen lelijkerd!", 
+			"Is dat alles?", 
+			"Je moeder!", 
+			"Krijg toch de tyfus!"
+		];
+*/		
+		var sentences = [
+			"Niet om het 1 of ander", 
+			"Ik ben je moeder niet", 
+			"Laten we dit eens eventjes gaan afkaderen", 
+			"Ouwe lul"
+		];
+
+		var sentence_i = 0;
+
+		function sayNextThing() {
+			saySomething(sentences[sentence_i]);
+			sentence_i += 1;
+			if (sentence_i == sentences.length) {
+				sentence_i = 0;
+			}
+		}
+
+		var myShakeEvent = new Shake({
+				threshold: 3, // optional shake strength threshold
+				timeout: 1000 // optional, determines the frequency of event generation
+		});
+
+		//function to call when shake occurs
+		function shakeEventDidOccur () {
+
+				//put your own code here etc.
+				sayNextThing();
+		}
+
+		myShakeEvent.start();
+
+		window.addEventListener('shake', shakeEventDidOccur, false);
+
+	</script>
+</head>
+<body>
+	<h1>Hitlabot</h1>
+
+
+	<div>
+	<input onclick='sayNextThing();' type='button' value='Next hit!' />
+
+	</div>
+	<div>
+		<img src="images/robot-turtles.jpg"/>
+	</div>
+
+	<div>
+		<a href="http://responsivevoice.org">ResponsiveVoice-NonCommercial</a> licensed under <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img title="ResponsiveVoice Text To Speech" src="https://responsivevoice.org/wp-content/uploads/2014/08/95x15.png" alt="95x15" width="95" height="15" />
+	</div>
+</body>
