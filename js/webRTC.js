@@ -25,6 +25,6 @@ function select(userType) {
   webrtc.on('readyToCall', function () {
     // you can name it anything
     console.log("starting@")
-    webrtc.joinRoom('HELPDESK123456');
+    webrtc.joinRoom('HELPDESKpoppa123456');
   });
 }
