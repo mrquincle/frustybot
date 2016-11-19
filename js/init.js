@@ -1,8 +1,10 @@
 function init() {
   // verify if the phone can detect the shake event.
   if (!('ondevicemotion' in window)) {
-    // alert("This device cannot detect shakes!")
+    alert("This device cannot detect shakes!")
   }
+
+  initAvailableLists();
 
   // init shake event
   let myShakeEvent = new Shake({
