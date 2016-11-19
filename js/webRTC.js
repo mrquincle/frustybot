@@ -27,8 +27,11 @@ function select(userType) {
   }
   else {
     document.getElementById("helpdeskInterface").style.display = "block";
-
   }
+
+  var localAudio = document.getElementById('localAudio');
+  localAudio.disabled = false;
+  localAudio.volume = 0;
 
 
   // we have to wait until it's ready
@@ -55,6 +58,24 @@ function select(userType) {
   // called when a peer is created
   webrtc.on('createdPeer', function (peer) {
     console.log('created peer')
+    if (peer && peer.pc) {
+      peer.firsttime = true;
+      peer.pc.on('iceConnectionStateChange', function (event) {
+        console.log('iceConnectionStateChange', peer.pc.iceConnectionState, event)
+        let state = peer.pc.iceConnectionState;
+        switch (state) {
+          case 'connected':
+          case 'completed':
+            localAudio.srcObject = peer.stream;
+            if (peer.firsttime) {
+              peer.firsttime = false;
+            }
+            break;
+          case 'closed':
+            break;
+        }
+      });
+    }
   });
 
 
