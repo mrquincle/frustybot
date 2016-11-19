@@ -1,26 +1,29 @@
 let hitSentences = {
   available: {calm:[], angry:[]},
   calm: [
-    "Dat kietelt!",
-    "Hi Hi Hi!",
-    "Niet om het 1 of ander",
-    "Ik ben je moeder niet",
-    "Dat is fijn!",
+    {line:"Dat kietelt!", voice: null},
+    {line:"Harder mag wel", voice: null},
+    {line:"Beetje naar links", voice: null},
+    {line:"Beetje naar rechts", voice: null},
+    {line:"teeheehee", voice: null},
+    {line:"Dat is fijn!", voice: null},
   ],
   angry: [
-    "auw!",
-    "Rustig aan!",
-    "Wat heb ik gedaan?",
-    "Waarom ik?"
+    {line:"whee", voice: null},
+    {line:"Ik ben je moeder niet", voice: null},
+    {line:"auw!", voice: null},
+    {line:"Rustig aan!", voice: null},
+    {line:"Wat heb ik gedaan?", voice: null},
+    {line:"Waarom ik?", voice: null},
   ]
 };
 
 let helpdeskSentences = {
   available: {calm:[], angry:[]},
   calm: [
-    "We zullen even de helpdesk voor u bellen"
+    {line:"We zullen even de helpdesk voor u bellen", voice: null},
   ],
   angry: [
-    "We gaan heel snel de helpdesk voor u bellen"
+    {line:"We gaan heel snel de helpdesk voor u bellen", voice: null},
   ]
 };

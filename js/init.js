@@ -16,4 +16,8 @@ function init() {
 
   // listen to the shake event!
   window.addEventListener('shake', shakeEventDidOccur, false);
+
+
+  var user = new Peer({key: 'yqh0u7lrdrhpvi'});
+  var helpdesk = new Peer({key: '2eoyrb803qq9qkt9'});
 }

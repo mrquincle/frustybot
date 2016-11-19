@@ -7,6 +7,8 @@ let SHAKE_THRESHOLD = 3;
 let ANGRY_THRESHOLD = 15;
 
 
+
+
 function initAvailableLists() {
   hitSentences.available.calm = [];
   hitSentences.available.angry = [];
@@ -61,8 +63,10 @@ function getRandomSentenceFromSelection(sentenceOptions, emotion) {
 function pronounce(sentenceOptions, emotion) {
   let selectedSentence = getRandomSentenceFromSelection(sentenceOptions, emotion);
   // say it
-  responsiveVoice.setDefaultVoice("Dutch Female", {pitch:4, volume:1} );
-  responsiveVoice.speak(selectedSentence);
+  responsiveVoice.setDefaultVoice(selectedSentence.voice || "Dutch Female", {
+    pitch: selectedSentence.pitch || 4, volume:1
+  });
+  responsiveVoice.speak(selectedSentence.line);
 }
 
 function saySomething(emotion) {
@@ -85,7 +89,7 @@ function saySomething(emotion) {
 
 
     // ignore shakes for 4 seconds if we are calling the helpdesk.
-    setTimeout(() => { IGNORE_SHAKES = false; }, 10000);
+    setTimeout(() => { IGNORE_SHAKES = false; }, 1000);
   }
   else {
     pronounce(hitSentences, emotion);
