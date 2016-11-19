@@ -21,7 +21,7 @@ function select(userType) {
     USER_PEER = new Peer({key: 'yqh0u7lrdrhpvi', secure: true});
     document.getElementById("elderlyInterface").style.display = "block";
 
-    call();
+    callUser('2eoyrb803qq9qkt9');
   }
   else {
     USER_PEER = new Peer({key: '2eoyrb803qq9qkt9', secure: true});
@@ -34,8 +34,24 @@ function select(userType) {
   }
 }
 
-function call(peerId) {
+function callUser(peerId) {
   console.log("calling!")
+
+  USER_PEER.on('open', function(){
+    console.log('HOPEN')
+  });
+
+  // Receiving a call
+  USER_PEER.on('call', function(call){
+    // Answer the call automatically (instead of prompting user) for demo purposes
+
+  });
+  USER_PEER.on('error', function(err){
+    alert(err.message);
+    // Return to step 2 if error occurs
+
+  });
+
   let callSession = USER_PEER.call(peerId, MediaStream);
 
   callSession.on('stream', function(stream) {
