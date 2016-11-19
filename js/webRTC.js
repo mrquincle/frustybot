@@ -51,10 +51,6 @@ function select(userType) {
     console.log('remote fail', peer.sid);
   });
 
-  // working around weird simplewebrtc behaviour
-  webrtc.on('videoAdded', function (video, peer) {
-    console.log('video added')
-  });
   // called when a peer is created
   webrtc.on('createdPeer', function (peer) {
     console.log('created peer')
@@ -73,7 +69,7 @@ function select(userType) {
             break;
           case 'closed':
           case 'failed':
-            webrtc.joinRoom(ROOM_ID);
+            break;
         }
       });
     }
