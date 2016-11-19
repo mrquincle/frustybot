@@ -3,7 +3,7 @@
 	<!--<script src='https://code.responsivevoice.org/responsivevoice.js'></script>-->
 	<script src="./js/polyfills.js"></script>
 	<script src="./libs/responsivevoice.js"></script>
-	<script src="./libs/peer.js"></script>
+	<script src="https://simplewebrtc.com/latest-v2.js"></script>
 	<script src="./js/shake.js"></script>
     <script src="./js/lines.js"></script>
     <script src="./js/logic.js"></script>
@@ -35,6 +35,8 @@
 </div>
 <div id="elderlyInterface">
 	<h1>Frustybot!</h1>
+	<video height="300" id="localVideo"></video>
+	<div id="remotesVideos"></div>
 	X: <span id="vectorX"></span><br>
 	Y: <span id="vectorY"></span><br>
 	Z: <span id="vectorZ"></span><br>
