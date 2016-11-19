@@ -32,7 +32,8 @@
 				console.log("Reset to first sentence");
 				sentence_i = 0;
 				console.log("Call helpdesk");
-				document.getElementById('call-helpdesk').click();
+//				document.getElementById('call-helpdesk').click();
+				location.href = "skype:marc.hulscher?call";
 			}
 		}
 
@@ -64,7 +65,8 @@
 	</div>
 	<div>
 		<img src="images/robot-turtles.jpg"/>
-		<a id="call-helpdesk" href="skype:marc.hulscher?call">Call helpdesk</a>
+		<input id="call-helpdesk" onclick='skype:marc.hulscher?call' type='button' value='Call!' />
+		<a id="call-helpdesk2" href="skype:marc.hulscher?call">Call helpdesk</a>
 	</div>
 
 	<div>
