@@ -8,13 +8,13 @@ let ANGRY_THRESHOLD = 15;
 
 
 function initAvailableLists() {
-  hitSentences.available.mild = [];
+  hitSentences.available.calm = [];
   hitSentences.available.angry = [];
-  helpdeskSentences.available.mild = [];
+  helpdeskSentences.available.calm = [];
   helpdeskSentences.available.angry = [];
-  for (let i = 0; i < hitSentences.mild.length;  i++) { hitSentences.available.mild.push(i); }
+  for (let i = 0; i < hitSentences.calm.length;  i++) { hitSentences.available.calm.push(i); }
   for (let i = 0; i < hitSentences.angry.length;  i++) { hitSentences.available.angry.push(i); }
-  for (let i = 0; i < helpdeskSentences.mild.length;  i++) { helpdeskSentences.available.mild.push(i); }
+  for (let i = 0; i < helpdeskSentences.calm.length;  i++) { helpdeskSentences.available.calm.push(i); }
   for (let i = 0; i < helpdeskSentences.angry.length; i++) { helpdeskSentences.available.angry.push(i); }
 }
 
@@ -25,7 +25,7 @@ function shakeEventDidOccur (event) {
   document.getElementById("vectorY").innerHTML = event.dy;
   document.getElementById("vectorZ").innerHTML = event.dz;
 
-  let emotion = 'mild';
+  let emotion = 'calm';
   if (event.dx > ANGRY_THRESHOLD || event.dy > ANGRY_THRESHOLD || event.dz > ANGRY_THRESHOLD) {
     emotion = 'angry';
   }

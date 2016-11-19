@@ -1,6 +1,6 @@
 let hitSentences = {
-  available: {mild:[], angry:[]},
-  mild: [
+  available: {calm:[], angry:[]},
+  calm: [
     "Dat kietelt!",
     "Hi Hi Hi!",
     "Niet om het 1 of ander",
@@ -16,8 +16,8 @@ let hitSentences = {
 };
 
 let helpdeskSentences = {
-  available: {mild:[], angry:[]},
-  mild: [
+  available: {calm:[], angry:[]},
+  calm: [
     "We zullen even de helpdesk voor u bellen"
   ],
   angry: [
