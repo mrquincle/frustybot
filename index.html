@@ -33,8 +33,12 @@
 				console.log("Reset to first sentence");
 				sentence_i = 0;
 				console.log("Call helpdesk");
-				window.open("tel:0646161842");
+
+				let element = document.getElementById("call-helpdesk")
+console.log(element); element.click();
+				//window.open("tel:0646161842");
 				//window.open("skype:marc.hulscher?call");
+
 			}
 		}
 
@@ -66,7 +70,7 @@
 	</div>
 	<div>
 		<img src="images/robot-turtles.jpg"/>
-		<a id="call-helpdesk2" href="skype:marc.hulscher?call">Call helpdesk</a>
+		<a id="call-helpdesk" href="skype:marc.hulscher?call">Call helpdesk</a>
 	</div>
 
 <!--
