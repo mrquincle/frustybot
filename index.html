@@ -28,8 +28,10 @@
 		function sayNextThing() {
 			saySomething(sentences[sentence_i]);
 			sentence_i += 1;
-			if (sentence_i == sentences.length + 1) {
+			if (sentence_i == sentences.length) {
+				console.log("Reset to first sentence");
 				sentence_i = 0;
+				console.log("Call helpdesk");
 				document.getElementById('call-helpdesk').click();
 			}
 		}
