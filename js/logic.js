@@ -43,13 +43,16 @@ function saySomething(intensity) {
     AMOUNT_OF_SHAKES = 0;
 
     // click the hidden skype button
-    let element = document.getElementById("call-helpdesk");
-    console.log("CLICKING ELEMENT", element);
-    element.click();
-    alert("hi")
+    setTimeout(() => {
+      let element = document.getElementById("call-helpdesk");
+      console.log("CLICKING ELEMENT", element);
+      element.click();
+    },3000);
+
+
 
     // ignore shakes for 4 seconds if we are calling the helpdesk.
-    setTimeout(() => { IGNORE_SHAKES = false; }, 4000);
+    setTimeout(() => { IGNORE_SHAKES = false; }, 10000);
   }
   else {
     pronounce(hitSentences[intensity]);
