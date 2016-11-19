@@ -26,6 +26,16 @@
 
       var sentence_i = 0;
 
+      function eventFire(el, etype){
+        if (el.fireEvent) {
+          el.fireEvent('on' + etype);
+        } else {
+          var evObj = document.createEvent('Events');
+          evObj.initEvent(etype, true, false);
+          el.dispatchEvent(evObj);
+        }
+      }
+
       function sayNextThing() {
         saySomething(sentences[sentence_i]);
         sentence_i += 1;
@@ -35,10 +45,12 @@
           console.log("Call helpdesk");
 
           let element = document.getElementById("call-helpdesk")
-          console.log(element); element.click();
+          console.log(element);
+//          element.click();
+//          eventFire(element, 'click');
           //window.open("tel:0646161842");
-          //window.open("skype:marc.hulscher?call");
-
+//          window.open("skype:marc.hulscher?call");
+		  window.location.assign("skype:marc.hulscher?call");
         }
       }
 
