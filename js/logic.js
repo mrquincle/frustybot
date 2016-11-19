@@ -4,7 +4,7 @@ let AMOUNT_OF_SHAKES = 0;
 let AMOUNT_OF_LINES_BEFORE_HELPDESK = 4;
 let IGNORE_SHAKES = false;
 let SHAKE_THRESHOLD = 3;
-let ANGRY_THRESHOLD = 10;
+let ANGRY_THRESHOLD = 15;
 
 
 function initAvailableLists() {
