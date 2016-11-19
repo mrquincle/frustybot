@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+	<!--<script src='https://code.responsivevoice.org/responsivevoice.js'></script>-->
+	<script src="libs/responsivevoice.js"></script>
+	<script src="./js/shake.js"></script>
+    <script src="./js/lines.js"></script>
+    <script src="./js/logic.js"></script>
+    <script src="./js/init.js"></script>
+</head>
+<body onLoad="init()">
+	<h1>Frustybot!</h1>
+	<span id="vector"></span>
+	<div>
+	<input onclick='shakeEventDidOccur({vector:Math.random()*50});' type='button' value='Next hit!' />
+
+	</div>
+	<div>
+		<img src="images/robot-turtles.jpg"/>
+		<a id="call-helpdesk" href="skype:marc.hulscher?call">Call helpdesk</a>
+	</div>
+	<div>
+		<a href="http://responsivevoice.org">ResponsiveVoice-NonCommercial</a> licensed under <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img title="ResponsiveVoice Text To Speech" src="https://responsivevoice.org/wp-content/uploads/2014/08/95x15.png" alt="95x15" width="95" height="15" />
+	</div>
+
+</body>

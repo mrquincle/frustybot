@@ -8,6 +8,8 @@ let ANGRY_THRESHOLD = 15;
 
 // function to call when shake occurs
 function shakeEventDidOccur (event) {
+
+  document.getElementById("vector").innerHTML = event.vector;
   let intensity = 'mild';
   if (event.vector > ANGRY_THRESHOLD) {
     intensity = 'angry';
