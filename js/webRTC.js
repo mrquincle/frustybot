@@ -7,12 +7,18 @@ function select(userType) {
   USER_TYPE = userType;
 
   webrtc = new SimpleWebRTC({
-    // the id/element dom element that will hold "our" video
-    localVideoEl: 'localVideo',
-    // the id/element dom element that will hold remote videos
-    remoteVideosEl: 'remotesVideos',
-    // immediately ask for camera access
-    autoRequestMedia: true
+    localVideoEl: '',
+    remoteVideosEl: '',
+    autoRequestMedia: false,
+    enableDataChannels: false,
+    media: {
+      audio: true,
+      video: false
+    },
+    receiveMedia: { // FIXME: remove old chrome <= 37 constraints format
+      offerToReceiveAudio: 1,
+      offerToReceiveVideo: 0
+    },
   });
 
   document.getElementById("startInterface").style.display = "none";
