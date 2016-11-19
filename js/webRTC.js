@@ -1,17 +1,5 @@
 let webrtc = undefined;
 let USER_TYPE = undefined;
-let MediaStream = undefined;
-
-
-navigator.mediaDevices.getUserMedia({video:false, audio: true})
-  .then(function(mediaStream) {
-    console.log("we got an awesome media stream!");
-    MediaStream = mediaStream;
-  })
-  .catch(function(err) {
-    console.log("failed getting media stream", err);
-    /* handle the error */
-  });
 
 function select(userType) {
   USER_TYPE = userType;
@@ -36,6 +24,7 @@ function select(userType) {
   // we have to wait until it's ready
   webrtc.on('readyToCall', function () {
     // you can name it anything
+    console.log("starting@")
     webrtc.joinRoom('HELPDESK123456');
   });
 }
