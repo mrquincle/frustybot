@@ -38,7 +38,7 @@ function select(userType) {
   webrtc.on('readyToCall', function () {
     // you can name it anything
     console.log("starting@")
-    webrtc.joinRoom('apoliiut');
+    webrtc.joinRoom(ROOM_ID);
   });
 
   // local p2p/ice failure
@@ -72,7 +72,8 @@ function select(userType) {
             }
             break;
           case 'closed':
-            break;
+          case 'failed':
+            webrtc.joinRoom(ROOM_ID);
         }
       });
     }
