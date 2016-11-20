@@ -44,8 +44,13 @@ let helpdeskSentences = {
   available: {calm:[], angry:[]},
   calm: [
     {line:"We zullen even de helpdesk voor u bellen", voice: null},
+    {line:"ja, ja ik snap het, erg hoor. We bellen de helpdesk wel even", voice: null},
+    {line:"sorry, ik weet er zelf weinig van, maar we halen de helpdesk er wel even bij", voice: null},
+    {line:"we roepen de geesten der helpdeskigheid aan!", voice: null},
   ],
   angry: [
     {line:"We gaan heel snel de helpdesk voor u bellen", voice: null},
+    {line:"hallo met de helpdesk......hahaha ik was het maar", voice: null},
+    {line:"weetje wat? ik stuur jou naar de helpdesk en mezelf naar de eerste hulp. ok?", voice: null},
   ]
 };
