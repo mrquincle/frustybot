@@ -82,9 +82,7 @@ function saySomething(emotion) {
     // click the hidden skype button and wait for the speach to end
     setTimeout(() => {
       enterRoom();
-    },3500);
-
-
+    },2000);
 
     // ignore shakes for 4 seconds if we are calling the helpdesk.
     setTimeout(() => { IGNORE_SHAKES = false; }, 1000);

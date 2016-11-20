@@ -5,9 +5,8 @@ let connectedPeer = null;
 let webrtcInitialized = false;
 let roomEntered = false;
 
-function select(userType) {
-  USER_TYPE = userType;
 
+function initWebRtc() {
   webrtc = new SimpleWebRTC({
     localVideoEl: '',
     remoteVideosEl: '',
@@ -22,19 +21,6 @@ function select(userType) {
       offerToReceiveVideo: 0
     },
   });
-
-  document.getElementById("startInterface").style.display = "none";
-  if (userType === 'elderly') {
-    document.getElementById("elderlyInterface").style.display = "block";
-  }
-  else {
-    document.getElementById("helpdeskInterface").style.display = "block";
-  }
-
-  var localAudio = document.getElementById('localAudio');
-  localAudio.disabled = false;
-  localAudio.volume = 1;
-
 
   // we have to wait until it's ready
   webrtc.on('readyToCall', function () {
@@ -55,7 +41,7 @@ function select(userType) {
 
   // called when a peer is created
   webrtc.on('createdPeer', function (peer) {
-    console.log('created peer')
+    console.log('created peer');
     connectedPeer = peer;
     if (peer && peer.pc) {
       peer.firsttime = true;
@@ -78,12 +64,29 @@ function select(userType) {
     }
   });
 
-
   webrtc.connection.on('message', function (message) {
     console.log('RECEIVED MESSAGE', message);
     if (message.type === 'helpdeskCloseConnection')
       leaveRoom();
   });
+}
+
+function select(userType) {
+  USER_TYPE = userType;
+
+  document.getElementById("startInterface").style.display = "none";
+  if (userType === 'elderly') {
+    document.getElementById("elderlyInterface").style.display = "block";
+  }
+  else {
+    document.getElementById("helpdeskInterface").style.display = "block";
+    enterRoom();
+  }
+
+  var localAudio = document.getElementById('localAudio');
+  localAudio.disabled = false;
+  localAudio.volume = 1;
+
 }
 
 function hangUp() {
@@ -95,6 +98,7 @@ function hangUp() {
 
 function enterRoom() {
   if (roomEntered === false) {
+    console.log("ENTERING ROOM")
     roomEntered = true;
     webrtc.joinRoom(ROOM_ID);
     localAudio.disabled = false;
@@ -103,6 +107,7 @@ function enterRoom() {
 
 function leaveRoom() {
   if (roomEntered === true) {
+    console.log("LEAVING ROOM")
     roomEntered = false;
     webrtc.leaveRoom();
     localAudio.disabled = true;

@@ -7,8 +7,6 @@ let hitSentences = {
     {line:"Beetje naar rechts", voice: null},
     {line:"teeheehee", voice: null},
     {line:"Dat is fijn!", voice: null},
-
-    {line:"prrrrrr", voice: null},
     {line:"oh hoi", voice: null},
     {line:"ik heb je ook gemist", voice: null},
     {line:"en hoe was jouw dag?", voice: null},
@@ -19,9 +17,6 @@ let hitSentences = {
     {line:"oh heb je weer gedronken ofzo?", voice: null},
     {line:"die outfit is pijnlijker dan je slagen ouwe!", voice: null},
     {line:"zal ik de helpdesk maar eens voor MIJ bellen dan?", voice: null},
-
-
-
   ],
   angry: [
     {line:"zo ben ik in tijden niet aangeraakt zeg", voice: null},
@@ -39,6 +34,9 @@ let hitSentences = {
     {line:"die voelde ik niet eens", voice: null},
     {line:"doe maar normaal, dan ben je al oud genoeg", voice: null},
     {line:"zo heb ik u niet opgevoed", voice: null},
+    {line:"heb je het al geprobeert uit en aan te zetten?", voice: null},
+    {line:"ik had al zo'n slechte dag, en nu dit?!?!", voice: null},
+    {line:"ach nee echt?!?", voice: null},
   ]
 };
 

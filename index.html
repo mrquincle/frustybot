@@ -38,6 +38,10 @@
 		div.userTypeButton.red {
 			background-color: #ba190f;
 		}
+
+		div.debug {
+			display: none;
+		}
 	</style>
 
 </head>
@@ -47,14 +51,14 @@
 	I am a:
 	<div class="userTypeButton" onclick="select('elderly');">Frustrated Elderly</div>
 	or a:
-	<div class="userTypeButton" onclick="select('helpdesk');">Helpdesk</div>
+	<div class="userTypeButton" onclick="select('helpdesk');">Tired, underpaid, helpdesk employee</div>
 </div>
 <div id="helpdeskInterface">
 	<div class="userTypeButton red" onclick="hangUp();">Hang up</div>
 </div>
 <div id="elderlyInterface">
 	<h1>Frustybot!</h1>
-
+	<input onclick='shakeEventDidOccur({dx:Math.random()*15});' type='button' value='Next hit!' />
 	<div>
 		<img src="images/grumpy.jpg"/>
 	</div>
@@ -62,21 +66,21 @@
 	<br>
 	<br>
 	<br>
-
-	X: <span id="vectorX"></span><br>
-	Y: <span id="vectorY"></span><br>
-	Z: <span id="vectorZ"></span><br>
-
+	<div class="debug">
+		X: <span id="vectorX"></span><br>
+		Y: <span id="vectorY"></span><br>
+		Z: <span id="vectorZ"></span><br>
+	</div>
 	<br>
 	<br>
 	<br>
-
-
 	<div>
 		<a href="http://responsivevoice.org">ResponsiveVoice-NonCommercial</a> licensed under <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img title="ResponsiveVoice Text To Speech" src="https://responsivevoice.org/wp-content/uploads/2014/08/95x15.png" alt="95x15" width="95" height="15" />
 	</div>
+	<br>
+	<br>
+	<br>
 
-	<input onclick='shakeEventDidOccur({dx:Math.random()*15});' type='button' value='Next hit!' />
 
 </div>
 <audio id="localAudio" controls="" oncontextmenu="return false;" disabled=""></audio>
