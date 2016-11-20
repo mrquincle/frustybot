@@ -75,20 +75,20 @@ function initWebRtc() {
   });
 }
 
-function select(userType) {
+function selectUser(userType) {
   USER_TYPE = userType;
 
   document.getElementById("startInterface").style.display = "none";
   if (userType === 'elderly') {
     document.getElementById("elderlyInterface").style.display = "block";
+
+    // listen to the shake event!
+    window.addEventListener('shake', shakeEventDidOccur, false);
   }
   else {
     document.getElementById("helpdeskInterface").style.display = "block";
     enterRoom();
   }
-
-
-
 }
 
 function hangUp() {

@@ -6,12 +6,13 @@ function init() {
 
   initAvailableLists();
 
-  // init shake event
+  // init shake event, the listener is set in the selectUser method in webRTC.js
   let myShakeEvent = new Shake({
     threshold: SHAKE_THRESHOLD, // optional shake strength threshold
     timeout: 1000 // optional, determines the frequency of event generation
   });
   myShakeEvent.start();
+
 
   // init the web rtc stack.
   initWebRtc();

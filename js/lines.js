@@ -41,6 +41,7 @@ let hitSentences = {
     {line:"dus dit vind je normaal?", voice: null},
     {line:"wacht maar tot ik ook armen heb", voice: null},
     {line:"als je dat nog 1 keer doet blijf ik hier hangen hoor", voice: null},
+    {line:"m'n moeder zei al dat dit een slechte relatie zou zijn", voice: null},
 ]
 };
 
@@ -53,6 +54,7 @@ let helpdeskSentences = {
     {line:"we roepen de geesten der helpdeskigheid aan!", voice: null},
   ],
   angry: [
+    {line:"HELP HELP HELPDESK!!", voice: null},
     {line:"We gaan heel snel de helpdesk voor u bellen", voice: null},
     {line:"hallo met de helpdesk......hahaha ik was het maar", voice: null},
     {line:"weetje wat? ik stuur jou naar de helpdesk en mezelf naar de eerste hulp.", voice: null},
