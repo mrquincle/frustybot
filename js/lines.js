@@ -6,7 +6,7 @@ let hitSentences = {
     {line:"Beetje naar links", voice: null},
     {line:"Beetje naar rechts", voice: null},
     {line:"teeheehee", voice: null},
-    {line:"Dat is fijn!", voice: null}
+    {line:"Dat is fijn!", voice: null},
 
     {line:"prrrrrr", voice: null},
     {line:"oh hoi", voice: null},
