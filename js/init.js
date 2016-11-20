@@ -13,10 +13,6 @@ function init() {
   });
   myShakeEvent.start();
 
-
-  // listen to the shake event!
-  window.addEventListener('shake', shakeEventDidOccur, false);
-
   // init the web rtc stack.
   initWebRtc();
 }

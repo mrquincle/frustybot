@@ -7,6 +7,10 @@ let roomEntered = false;
 
 
 function initWebRtc() {
+  var localAudio = document.getElementById('localAudio');
+  localAudio.disabled = false;
+  localAudio.volume = 1;
+
   webrtc = new SimpleWebRTC({
     localVideoEl: '',
     remoteVideosEl: '',
@@ -83,9 +87,7 @@ function select(userType) {
     enterRoom();
   }
 
-  var localAudio = document.getElementById('localAudio');
-  localAudio.disabled = false;
-  localAudio.volume = 1;
+
 
 }
 
@@ -101,6 +103,7 @@ function enterRoom() {
     console.log("ENTERING ROOM")
     roomEntered = true;
     webrtc.joinRoom(ROOM_ID);
+    var localAudio = document.getElementById('localAudio');
     localAudio.disabled = false;
   }
 }
@@ -110,6 +113,7 @@ function leaveRoom() {
     console.log("LEAVING ROOM")
     roomEntered = false;
     webrtc.leaveRoom();
+    var localAudio = document.getElementById('localAudio');
     localAudio.disabled = true;
   }
 }
