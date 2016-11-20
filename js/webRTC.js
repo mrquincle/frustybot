@@ -1,7 +1,9 @@
 let webrtc = undefined;
 let USER_TYPE = undefined;
 let ROOM_ID = "testing_crownstone";
-
+let connectedPeer = null;
+let webrtcInitialized = false;
+let roomEntered = false;
 
 function select(userType) {
   USER_TYPE = userType;
@@ -31,14 +33,14 @@ function select(userType) {
 
   var localAudio = document.getElementById('localAudio');
   localAudio.disabled = false;
-  localAudio.volume = 0;
+  localAudio.volume = 1;
 
 
   // we have to wait until it's ready
   webrtc.on('readyToCall', function () {
     // you can name it anything
     console.log("starting@")
-    webrtc.joinRoom(ROOM_ID);
+    webrtcInitialized = true;
   });
 
   // local p2p/ice failure
@@ -54,6 +56,7 @@ function select(userType) {
   // called when a peer is created
   webrtc.on('createdPeer', function (peer) {
     console.log('created peer')
+    connectedPeer = peer;
     if (peer && peer.pc) {
       peer.firsttime = true;
       peer.pc.on('iceConnectionStateChange', function (event) {
@@ -78,5 +81,30 @@ function select(userType) {
 
   webrtc.connection.on('message', function (message) {
     console.log('RECEIVED MESSAGE', message);
+    if (message.type === 'helpdeskCloseConnection')
+      leaveRoom();
   });
+}
+
+function hangUp() {
+  if (connectedPeer) {
+    connectedPeer.send("helpdeskCloseConnection", {hello:'world'});
+    connectedPeer = null;
+  }
+}
+
+function enterRoom() {
+  if (roomEntered === false) {
+    roomEntered = true;
+    webrtc.joinRoom(ROOM_ID);
+    localAudio.disabled = false;
+  }
+}
+
+function leaveRoom() {
+  if (roomEntered === true) {
+    roomEntered = false;
+    webrtc.leaveRoom();
+    localAudio.disabled = true;
+  }
 }

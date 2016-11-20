@@ -12,46 +12,72 @@
 	<style>
 		#startInterface {
 			display: block;
+			font-size:16px;
 		}
 
 		#elderlyInterface {
 			display: none;
+			width: 800px;
+			margin: auto auto auto auto;
 		}
 
 		#helpdeskInterface {
 			display: none;
+		}
+
+		div.userTypeButton {
+			margin:30px;
+			margin-left: 60px;
+			padding:40px;
+			background-color: #2e87ff;
+			font-size: 20px;
+			color:#fff;
+			border-radius: 5px;
+		}
+
+		div.userTypeButton.red {
+			background-color: #ba190f;
 		}
 	</style>
 
 </head>
 <body onLoad="init()">
 
-<video height="300" id="localVideo"></video>
-<div id="remotesVideos" height="400"></div>
-<audio id="localAudio" controls="" oncontextmenu="return false;" disabled=""></audio>
 <div id="startInterface">
+	I am a:
 	<div class="userTypeButton" onclick="select('elderly');">Frustrated Elderly</div>
+	or a:
 	<div class="userTypeButton" onclick="select('helpdesk');">Helpdesk</div>
 </div>
 <div id="helpdeskInterface">
-	helpdesk
+	<div class="userTypeButton red" onclick="hangUp();">Hang up</div>
 </div>
 <div id="elderlyInterface">
 	<h1>Frustybot!</h1>
 
+	<div>
+		<img src="images/grumpy.jpg"/>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+
 	X: <span id="vectorX"></span><br>
 	Y: <span id="vectorY"></span><br>
 	Z: <span id="vectorZ"></span><br>
-	<div>
-	<input onclick='shakeEventDidOccur({dx:Math.random()*15});' type='button' value='Next hit!' />
 
-	</div>
-	<div>
-		<img src="images/robot-turtles.jpg"/>
-		<a id="call-helpdesk" href="skype:marc.hulscher?call">Call helpdesk</a>
-	</div>
+	<br>
+	<br>
+	<br>
+
+
 	<div>
 		<a href="http://responsivevoice.org">ResponsiveVoice-NonCommercial</a> licensed under <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img title="ResponsiveVoice Text To Speech" src="https://responsivevoice.org/wp-content/uploads/2014/08/95x15.png" alt="95x15" width="95" height="15" />
 	</div>
+
+	<input onclick='shakeEventDidOccur({dx:Math.random()*15});' type='button' value='Next hit!' />
+
 </div>
+<audio id="localAudio" controls="" oncontextmenu="return false;" disabled=""></audio>
 </body>

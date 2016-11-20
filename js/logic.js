@@ -81,9 +81,7 @@ function saySomething(emotion) {
 
     // click the hidden skype button and wait for the speach to end
     setTimeout(() => {
-      let element = document.getElementById("call-helpdesk");
-      console.log("CLICKING ELEMENT", element);
-      //element.click();
+      enterRoom();
     },3500);
 
 
@@ -92,6 +90,7 @@ function saySomething(emotion) {
     setTimeout(() => { IGNORE_SHAKES = false; }, 1000);
   }
   else {
+    leaveRoom();
     pronounce(hitSentences, emotion);
   }
 }
